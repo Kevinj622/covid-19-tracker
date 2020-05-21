@@ -1,22 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1 class="box"> COVID-19 Tracker </h1>
+
+
+  <Summary class="box"> </Summary>
+  
+  
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+
+import Summary from './components/Summary.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Summary
   }
 }
 </script>
 
 <style>
+
+@import "../node_modules/bulma/css/bulma.css";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

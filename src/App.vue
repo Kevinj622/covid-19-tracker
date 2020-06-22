@@ -3,7 +3,7 @@
   <h1 class="box"> COVID-19 Tracker </h1>
 
 
-  <Summary class="box"> </Summary>
+  <SummaryLine class="box"> </SummaryLine>
   
   
   </div>
@@ -12,13 +12,13 @@
 <script>
 
 
-import Summary from './components/Summary.vue'
+import SummaryLine from './components/SummaryLine.vue'
 
 
 export default {
   name: 'App',
   components: {
-    Summary
+    SummaryLine
   }
 }
 </script>

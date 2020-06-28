@@ -1,9 +1,15 @@
 <template>
   <div id="app">
+  <header> 
+
+    
+
+  </header>
   <h1 class="box"> COVID-19 Tracker </h1>
-
-
-  <SummaryLine class="box"> </SummaryLine>
+  <Summary> </Summary>
+  <DropDownList v-on:country-changed="updateSelectedCountry"> </DropDownList>
+  <SummaryLine class="box" :selectedCountry="selectedCountry"> </SummaryLine>
+  <SummaryPie class="box" :selectedCountry="selectedCountry"> </SummaryPie>
   
   
   </div>
@@ -11,15 +17,37 @@
 
 <script>
 
-
+import Summary from './components/Summary.vue'
 import SummaryLine from './components/SummaryLine.vue'
-
+import SummaryPie from './components/SummaryPie.vue'
+import DropDownList from './components/DropDownList.vue'
 
 export default {
   name: 'App',
   components: {
-    SummaryLine
+    SummaryLine,
+    SummaryPie,
+    DropDownList,
+    Summary
+  },
+  data() {
+    return {
+
+      selectedCountry : ""
+    }
+  },
+
+
+  methods: {
+
+    updateSelectedCountry(country) {
+
+      this.selectedCountry = country;
+     
+    }
+
   }
+  
 }
 </script>
 

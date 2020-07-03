@@ -51,7 +51,6 @@ export default {
         })
         .then(countries => {
             this.summaryData = countries.Global;
-            console.log(this.summaryData);
         })
     }
 

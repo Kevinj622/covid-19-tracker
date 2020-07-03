@@ -23,6 +23,7 @@ export default {
   props : {
 
     selectedCountry: String
+  
 
   },
     
@@ -34,16 +35,13 @@ export default {
       options: {},
       
       countryLine: [],
+
+     
     };
   },
 
   methods: {
   
-    // getCountryLabel : function(countryData) {
-
-    //   return `${countryData.Country}: (${countryData.TotalConfirmed})`
-
-    // },
     getRandomHex: function() {
       return "#" + Math.floor(Math.random() * 16777215).toString(16);
     },
@@ -64,7 +62,7 @@ export default {
           "11" : "Nov",
           "12" : "Dec"
         };
-        return months[date.getMonth() + 1] + (date.getDate() + 1);
+        return months[date.getMonth() + 1] + ' ' + (date.getDate() + 1);
     },
 
         getSelectedCountry() {
@@ -78,6 +76,9 @@ export default {
           return {
             Country : country.Country,
             Confirmed : country.Confirmed,
+            Deaths : country.Deaths,
+            Recovered: country.Recovered,
+            Active: country.Active,
             Date : country.Date
           }
       })
@@ -97,12 +98,36 @@ export default {
 
       datasets: [
         {
-        label: "Total Confirmed",
+        label: 'Confirmed',
         backgroundColor: this.getRandomHex(),
         data: this.countryLine.map(data => data.Confirmed)
         },
+
+        {
+        label: 'Deaths',
+        backgroundColor: this.getRandomHex(),
+        data: this.countryLine.map(data => data.Deaths)
+        },
+          {
+        label: 'Recovered',
+        backgroundColor: this.getRandomHex(),
+        data: this.countryLine.map(data => data.Recovered)
+        },
+        {
+        label: 'Active',
+        backgroundColor: this.getRandomHex(),
+        data: this.countryLine.map(data => data.Active)
+        },
+        
     ]
+    },
+
+    this.options = {
+
+      responsive : true,
+      maintainAspectRatio: false,
     }
+
   this.loaded= true;
    
   }

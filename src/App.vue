@@ -5,12 +5,17 @@
     
 
   </header>
-  <h1 class="box"> COVID-19 Tracker </h1>
+  <h1> COVID-19 Tracker </h1>
   <Summary> </Summary>
   <DropDownList v-on:country-changed="updateSelectedCountry"> </DropDownList>
-  <SummaryLine class="box" :selectedCountry="selectedCountry"> </SummaryLine>
+
+  <div class="container"> 
+  <SummaryLine class="box" 
+  :selectedCountry="selectedCountry" 
+  :selectedStatus="selectedStatus"> 
+  </SummaryLine>
   <SummaryPie class="box" :selectedCountry="selectedCountry"> </SummaryPie>
-  
+  </div>
   
   </div>
 </template>
@@ -33,7 +38,8 @@ export default {
   data() {
     return {
 
-      selectedCountry : ""
+      selectedCountry : "",
+      selectedStatus : ""
     }
   },
 
